@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiSoLi</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+  <header class="cabecalho d-flex justify-content-center align-items-center">
+    <div style="width: 80%;">
+      <h1 class="titulo">Sistema para Solicitação de Livros - SiSoLi</h1>
+    </div>
+  </header>
+
+  <main class="d-flex flex-column justify-content-center align-items-center">
+    <div style="width: 80%;" class="mt-5 d-flex justify-content-between align-items-center">
+      <h2 class="">Solicitação de Livros</h2>
+      <div class="relogio">
+        <strong style="color: #fff;" id="timer"></strong> 
+      </div>
+    </div>
+
+    <section style="width: 80%;" class="mt-5 d-flex justify-content-center align-items-center">
+      <form id="form" name="formSolicitarLivro" class="row formulario" method="POST" onsubmit="return false">
+        <div class="dropdown col-6">
+          <label for="exampleInputEmail1" class="form-label label-titulo">Selecione o vínculo</label>
+          <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+          <select class="form-select" id="vinculo" name="vinculo" aria-label="Default select example">
+            <option selected></option>
+            <option value="Aluno">Aluno</option>
+            <option value="Discente">Discente</option>
+            <option value="Técnico">Técnico</option>
+          </select>
+          <p style="color: red;" id="vinculoError"></p>
+        </div>
+        <div class="col-6">
+          <label for="exampleInputEmail1" class="form-label label-titulo">Título</label>
+          <input type="text" id="titulo" name="titulo" class="form-control" >
+          <p style="color: red;" id="tituloError"></p>
+        </div>
+        
+        <div class="col-6">
+          <label for="exampleInputEmail1" class="form-label label-titulo">Autor</label>
+          <input type="text" class="form-control" id="autor" name="autor" >
+          <p style="color: red;" id="autorError"></p>
+        </div>
+        <div class="col-6">
+          <label for="exampleInputEmail1" class="form-label label-titulo">Edição</label>
+          <input type="text" class="form-control" id="edicao" name="edicao" >
+          <p style="color: red;" id="edicaoError"></p>
+        </div>
+        
+        <div class="col-6">
+          <label for="exampleInputEmail1" class="form-label label-titulo">ISSN</label>
+          <input type="text" class="form-control" id="issn" name="issn" >
+          <p style="color: red;" id="issnError"></p>
+        </div>
+        <div class="col-6">
+          <label for="exampleInputEmail1" class="form-label label-titulo">Ano</label>
+          <input type="text" class="form-control" id="ano" name="ano" >
+          <p style="color: red;" id="anoError"></p>
+        </div>
+        
+        <div class="col-6">
+          <label for="exampleInputEmail1" class="form-label label-titulo">Editora</label>
+          <input type="text" class="form-control" id="editora" name="editora" >
+          <p style="color: red;" id="editoraError"></p>
+        </div>
+        
+        <div class="mt-3">
+          <input class="p-2" id="botao-solicitar-livro" type="submit" value="Solicitar livro" style="font-weight: 600; color: #fff;">
+        </div>
+      </div>
+    </section>
+
+    <section style="width: 80%;" class="mt-5 d-flex flex-column justify-content-center align-items-center">
+      <div style="width: 100%;" class="mt-5 d-flex justify-content-between align-items-center">
+        <h2 class="">Tabela de solicitação</h2>
+      </div>
+
+      <hr class="divisor"/>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Vínculo</th>
+            <th scope="col">Título</th>
+            <th scope="col">Autor</th>
+            <th scope="col">Edição</th>
+            <th scope="col">ISSN</th>
+            <th scope="col">Ano</th>
+            <th scope="col">Editora</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela-livros"> 
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="./js/timer.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

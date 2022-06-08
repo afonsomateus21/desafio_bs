@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.cabecalho {
+  background-color: black;
+  height: 5rem;
+}
+
+.titulo {
+  color: #fff;
+}
+
+.relogio {
+  width: 5rem;
+  padding: 0.4rem;
+  border: 2px solid;
+  background-color: rgba(0,0,0,.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario {
+  width: 100%;
+}
+
+.label-titulo {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+#botao-solicitar-livro {
+  all: unset;
+  cursor: pointer;
+  background-color: #8257e5;
+  border-radius: 5px;
+}
+
+.divisor {
+  width: 100%;
+  border: 0.3px solid;
+  border-color: black !important;
+}
